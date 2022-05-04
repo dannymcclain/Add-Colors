@@ -214,7 +214,30 @@ function makePalette(swatch) {
     });
     swatchPalette.forEach(color => createFigmaStyle(color));
 }
-colorPalette.forEach(swatch => makePalette(swatch));
+let selectedCommand = figma.command;
+switch (selectedCommand) {
+    case 'Add Colors':
+        colorPalette.forEach(swatch => makePalette(swatch));
+        figma.closePlugin();
+        break;
+    case 'Create Swatches': {
+        const nodes = [];
+        let page = figma.currentPage;
+        let swatches = figma.getLocalPaintStyles();
+        // swatches.forEach(swatch => console.log(swatch));
+        swatches.forEach(swatch => {
+            let frame = figma.createFrame;
+            frame.fills = [{ type: 'SOLID', color: { r: 1, g: 0.5, b: 0 } }];
+            console.log(frame.fills);
+            // frame.fills = swatch;
+            page.appendChild(frame);
+            // nodes.push(frame);
+        });
+    }
+    default: {
+        figma.closePlugin("Something didn't work.");
+    }
+}
 // Make sure to close the plugin when you're done. Otherwise the plugin will
 // keep running, which shows the cancel button at the bottom of the screen.
 figma.closePlugin();
