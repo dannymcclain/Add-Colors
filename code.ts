@@ -216,6 +216,8 @@ function createFigmaStyle(color){
   const style = figma.createPaintStyle() 
   style.name = color.name
   style.description = color.color;
+  // Should I add the contrast ratio to the desciption? We could!
+  // style.description = color.color, color.ratio;
   
   const colorRGB: RGB = hexToRGB(color.color)  
 
@@ -232,39 +234,18 @@ function makePalette(swatch){
   let swatchPalette =[];
   let baseName = swatch.swatch;
   swatch.colors.forEach(color => {
+    // This may need to be updated because I've formatted the object to already add the base name
+    // Can probably just remove this line
     color.name = baseName + '/' + baseName + '-' + color.name;
+
+    // This will likely need to change from 'unshift' to 'push' since I've updated/formatted the object
     swatchPalette.unshift(color);
   })
+  // I actually think this is the only thing that needs to stay for this forEach.
   swatchPalette.forEach(color => createFigmaStyle(color))
 }
 
-let selectedCommand = figma.command;
-switch(selectedCommand) {
-  case 'Add Colors':
-    colorPalette.forEach(swatch => makePalette(swatch));
-    figma.closePlugin();
-    break;
-  case 'Create Swatches': {
-    const nodes: SceneNode[] = [];
-    let page = figma.currentPage;
-    let swatches = figma.getLocalPaintStyles();
-    // swatches.forEach(swatch => console.log(swatch));
-    swatches.forEach(swatch => {
-      let frame = figma.createFrame;
-      frame.fills = [{type: 'SOLID', color: {r: 1, g: 0.5, b: 0}}];
-      console.log(frame.fills);
-      // frame.fills = swatch;
-      page.appendChild(frame);
-      // nodes.push(frame);
-    })
-  }
-  default: {
-      figma.closePlugin("Something didn't work.");
-  }
-}
-
-
-
+colorPalette.forEach(swatch => makePalette(swatch));
 
 // Make sure to close the plugin when you're done. Otherwise the plugin will
 // keep running, which shows the cancel button at the bottom of the screen.

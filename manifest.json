@@ -5,15 +5,5 @@
   "main": "code.js",
   "editorType": [
     "figma"
-  ],
-  "menu": [
-    {
-      "name": "Add Colors",
-      "command": "Add Colors"
-    },
-    {
-      "name": "Create Swatches",
-      "command": "Create Swatches"
-    }
   ]
 }
