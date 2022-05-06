@@ -1,10 +1,10 @@
-let colorPalette = [
+export const colorPalette = [
     {
         "swatch": "built",
         "colors": [
             {
                 "name": "built-white",
-                "color": "#ffffff",
+                "color": "#fff",
                 "ratio": "1"
             },
             {
@@ -794,46 +794,4 @@ let colorPalette = [
             }
         ]
     }
-];
-function hexToRGB(hex) {
-    const r = (parseInt(hex.slice(1, 3), 16) / 255);
-    const g = (parseInt(hex.slice(3, 5), 16) / 255);
-    const b = (parseInt(hex.slice(5, 7), 16) / 255);
-    const result = {
-        r: r,
-        g: g,
-        b: b
-    };
-    return result;
-}
-function createFigmaStyle(color) {
-    const style = figma.createPaintStyle();
-    style.name = color.name;
-    //   style.description = color.color;
-    // Should I add the contrast ratio to the desciption? We could!
-    style.description = color.color + ',' + ' ' + color.ratio;
-    const colorRGB = hexToRGB(color.color);
-    // style.type = "PAINT"
-    const paint = {
-        type: "SOLID",
-        color: colorRGB
-    };
-    style.paints = [paint];
-}
-function makePalette(swatch) {
-    let swatchPalette = [];
-    let baseName = swatch.swatch;
-    swatch.colors.forEach(color => {
-        // This may need to be updated because I've formatted the object to already add the base name
-        // Can probably just remove this line
-        // color.name = baseName + '/' + baseName + '-' + color.name;
-        // This will likely need to change from 'unshift' to 'push' since I've updated/formatted the object
-        swatchPalette.push(color);
-    });
-    // I actually think this is the only thing that needs to stay for this forEach.
-    swatchPalette.forEach(color => createFigmaStyle(color));
-}
-colorPalette.forEach(swatch => makePalette(swatch));
-// Make sure to close the plugin when you're done. Otherwise the plugin will
-// keep running, which shows the cancel button at the bottom of the screen.
-figma.closePlugin();
+]
