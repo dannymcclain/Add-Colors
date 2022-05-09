@@ -13,9 +13,9 @@
                 "description": "slate-800, 9.64"
             },
             {
-                "name": "fg/fg-muted",
-                "color": "#43444F",
-                "description": "slate-800, 9.64"
+                "name": "fg/fg-subtle",
+                "color": "#5E606D",
+                "description": "slate-700, 6.23"
             },
             {
                 "name": "fg/fg-disabled",
