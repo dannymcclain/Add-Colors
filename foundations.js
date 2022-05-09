@@ -18,6 +18,11 @@
                 "description": "slate-700, 6.23"
             },
             {
+                "name": "fg/fg-subtle-icon",
+                "color": "#7a7c8a",
+                "description": "slate-600, 4.14"
+            },
+            {
                 "name": "fg/fg-disabled",
                 "color": "#9698a6",
                 "description": "slate-500, 2.86"
