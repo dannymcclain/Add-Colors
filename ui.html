@@ -1,0 +1,21 @@
+
+<h1>Add Colors</h1>
+<textarea id="userInput"></textarea>
+<button id="cancel">Cancel</button>
+<button id="add">Add Color Styles</button>
+<button id="clear">Clear Color Styles</button>
+
+<script>    
+    
+    document.getElementById('add').onclick = () => {
+        let userInput = document.getElementById('userInput').value;
+        parent.postMessage({ pluginMessage: { type: 'add', message: userInput } }, '*')
+      }
+
+    document.getElementById('clear').onclick = () => {
+        parent.postMessage({ pluginMessage: { type: 'clear' } }, '*')
+      }
+    document.getElementById('cancel').onclick = () => {
+        parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
+      }
+</script>
