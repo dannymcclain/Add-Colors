@@ -16,7 +16,8 @@ function hexToRGB(hex: string) {
 function createFigmaStyle(color){
   const style = figma.createPaintStyle() 
   style.name = color.name
-  style.description = color.description;
+  // style.description = color.description;
+  style.description = 'Hex: ' + color.hex + '\nContrast: ' + color.ratio;
 
   const colorRGB: RGB = hexToRGB(color.color)  
 
