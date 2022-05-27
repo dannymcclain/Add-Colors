@@ -22,12 +22,31 @@ function createFigmaStyle(color) {
     };
     style.paints = [paint];
 }
+function createFunctionalStyle(color) {
+    const style = figma.createPaintStyle();
+    style.name = color.name;
+    style.description = 'Color: ' + color.color + '\nContrast: ' + color.ratio;
+    const colorRGB = hexToRGB(color.hex);
+    // style.type = "PAINT"
+    const paint = {
+        type: "SOLID",
+        color: colorRGB
+    };
+    style.paints = [paint];
+}
 function makePalette(swatch) {
     let swatchPalette = [];
     swatch.colors.forEach(color => {
         swatchPalette.push(color);
     });
     swatchPalette.forEach(color => createFigmaStyle(color));
+}
+function makeFunctional(swatch) {
+    let swatchPalette = [];
+    swatch.colors.forEach(color => {
+        swatchPalette.push(color);
+    });
+    swatchPalette.forEach(color => createFunctionalStyle(color));
 }
 function clearPalette() {
     let documentPalette = figma.getLocalPaintStyles();
@@ -42,6 +61,10 @@ figma.ui.onmessage = (message) => {
     if (message.type == 'add') {
         let colorPalette = JSON.parse(message.message);
         colorPalette.forEach(swatch => makePalette(swatch));
+    }
+    if (message.type == 'functional') {
+        let colorPalette = JSON.parse(message.message);
+        colorPalette.forEach(swatch => makeFunctional(swatch));
     }
     else if (message.type == 'clear') {
         clearPalette();

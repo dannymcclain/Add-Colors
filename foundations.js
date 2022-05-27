@@ -3,34 +3,40 @@
         "swatch": "foreground",
         "colors": [
             {
-                "name": "fg/fg-default",
-                "color": "#0c1733",
-                "description": "built-navy, 17.71"
+                "name": "fg-default",
+                "color": "built-navy",
+                "ratio": "17.71",
+                "hex": "#0C1733"
             },
             {
-                "name": "fg/fg-muted",
-                "color": "#43444F",
-                "description": "slate-800, 9.64"
+                "name": "fg-muted",
+                "color": "slate-800",
+                "ratio": "9.7",
+                "hex": "#42444D"
             },
             {
-                "name": "fg/fg-subtle",
-                "color": "#5E606D",
-                "description": "slate-700, 6.23"
+                "name": "fg-subtle",
+                "color": "slate-600",
+                "ratio": "4.63",
+                "hex": "#717484"
             },
             {
-                "name": "fg/fg-subtle-icon",
-                "color": "#7a7c8a",
-                "description": "slate-600, 4.14"
+                "name": "fg-subtle-icon",
+                "color": "slate-500",
+                "ratio": "3.02",
+                "hex": "#9194A1"
             },
             {
-                "name": "fg/fg-disabled",
-                "color": "#9698a6",
-                "description": "slate-500, 2.86"
+                "name": "fg-disabled",
+                "color": "slate-500",
+                "ratio": "3.02",
+                "hex": "#9194A1"
             },
             {
-                "name": "fg/fg-roleEmphasis",
-                "color": "#FFFFFF",
-                "description": "built-white, 1"
+                "name": "fg-roleEmphasis",
+                "color": "built-white",
+                "ratio": "1",
+                "hex": "#FFFFFF"
             }
         ]
     },
@@ -38,19 +44,22 @@
         "swatch": "background",
         "colors": [
             {
-                "name": "bg/bg-default",
-                "color": "#FFFFFF",
-                "description": "built-white, 1"
+                "name": "bg-default",
+                "color": "built-white",
+                "ratio": "1",
+                "hex": "#FFFFFF"
             },
             {
-                "name": "bg/bg-subtle",
-                "color": "#f3f7f9",
-                "description": "mist-50, 1.08"
+                "name": "bg-subtle",
+                "color": "mist-50",
+                "ratio": "1.09",
+                "hex": "#F4F5F6"
             },
             {
-                "name": "bg/bg-heavy",
-                "color": "#dfeaee",
-                "description": "mist-100, 1.23"
+                "name": "bg-heavy",
+                "color": "mist-100",
+                "ratio": "1.22",
+                "hex": "#E5E9EB"
             }
         ]
     },
@@ -58,24 +67,28 @@
         "swatch": "divider",
         "colors": [
             {
-                "name": "divider/divider-faint",
-                "color": "#F4F4F7",
-                "description": "slate-50, 1.1"
+                "name": "divider-faint",
+                "color": "slate-50",
+                "ratio": "1.1",
+                "hex": "#F4F4F6"
             },
             {
-                "name": "divider/divider-light",
-                "color": "#E0E1E8",
-                "description": "slate-100, 1.3"
+                "name": "divider-light",
+                "color": "slate-100",
+                "ratio": "1.28",
+                "hex": "#E2E3E9"
             },
             {
-                "name": "divider/divider-default",
-                "color": "#CDCED8",
-                "description": "slate-200, 1.57"
+                "name": "divider-default",
+                "color": "slate-300",
+                "ratio": "1.74",
+                "hex": "#C2C4CB"
             },
             {
-                "name": "divider/divider-heavy",
-                "color": "#A8AAB7",
-                "description": "slate-400, 2.31"
+                "name": "divider-heavy",
+                "color": "slate-400",
+                "ratio": "2.26",
+                "hex": "#AAACB6"
             }
         ]
     }
